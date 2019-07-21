@@ -1,0 +1,2 @@
+#/bin/bash
+ps -ef |grep 9999 |grep -v grep |awk '{print "kill "$2}' |sh

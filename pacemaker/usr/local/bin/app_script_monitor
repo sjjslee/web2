@@ -1,0 +1,12 @@
+#!/bin/bash
+SERVICE=$1
+
+# ps -ef | grep "/usr/sbin/sshd -p 9999" |grep -v grep  > /dev/null
+result=`ps -ef | grep "/usr/sbin/sshd -p 9999" |grep -v grep |wc -l`
+if [ "${result}" -gt "0" ] ; then
+    echo "`date`: $SERVICE service running, everything is fine"
+    exit 0
+else
+    echo "`date`: $SERVICE is not running"
+    exit 7
+fi

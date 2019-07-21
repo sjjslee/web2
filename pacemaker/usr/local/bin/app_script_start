@@ -1,0 +1,2 @@
+/usr/sbin/sshd -p 9999
+env > /tmp/scrpt.out
